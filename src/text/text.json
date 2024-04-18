@@ -1,0 +1,132 @@
+{
+  "btnLogIn": "Увійти",
+  "btnRegistration": "Зареєструватися",
+
+  "nav": [
+    { "href": "/", "name": "Послуги" },
+    { "href": "/news", "name": "Новини" },
+    { "href": "/documents", "name": "Документи" },
+    { "href": "/about", "name": "Про нас" },
+    { "href": "/contacts", "name": "Контакти" }
+  ],
+  "contacts": [
+    { "href": "tel:+380449998877", "name": "+38 (044) - 999 - 88 - 77" },
+    { "href": "tel:0800666555", "name": "0 - 800 - 666 - 555" },
+    { "href": "mailto:some@gmail.com", "name": "some@gmail.com" }
+  ],
+  "contactsv2": {
+    "title": "Контакти",
+    "workHoursTitle": "Години роботи / приймальні дні",
+    "workHours": ["Вівторок з 14:00 до 19:00", "Четвер з 10:00 до 13:00"],
+    "staff": [
+      { "href": "tel:380672179052", "text": ["Диспетчер: ", "(067) 217 90 52", " (цілодобово)"] },
+      { "href": "tel:380949067116", "text": ["Охорона: ", "(094) 906-71-16", " (цілодобово)"] },
+      {
+        "href": "tel:380660027823",
+        "text": ["Електрик: ", "(066) 002-78-23", " (Сергій Віталійович)"]
+      },
+      {
+        "href": "tel:380673062050",
+        "text": ["Виконавчий директор: ", "(067) 306-20-50", " (Олена Петрівна)"]
+      },
+      {
+        "href": "tel:380933298145",
+        "text": ["Головний інженер: ", "(093)329-81-45", " (Леонід Антонович)"]
+      },
+      {
+        "href": "tel:380675027093",
+        "text": ["Бухгалтер: ", "(067) 502-70-93", " (Наталія Сергіївна)"]
+      }
+    ]
+  },
+  "documents": [
+    {
+      "href": "/documents/doc1",
+      "name": "Статут",
+      "type": "pdf"
+    },
+    {
+      "href": "/documents/doc2",
+      "name": "Положення про правління",
+      "type": "pdf"
+    },
+    {
+      "href": "/documents/doc3",
+      "name": "Положення про уповноважених представників",
+      "type": "pdf"
+    },
+    {
+      "href": "/documents/doc4",
+      "name": "Положення про ревкомісію",
+      "type": "pdf"
+    },
+    {
+      "href": "/documents/doc5",
+      "name": "Методика нарахування платежів за опалення",
+      "type": "pdf"
+    },
+    {
+      "href": "/documents/info",
+      "name": "Загальна інформація про будинок"
+    },
+    {
+      "href": "/documents/schedule",
+      "name": "Штатний розклад"
+    },
+    {
+      "href": "/documents/service",
+      "name": "Сервісні служби - Комерційні пропозиції"
+    },
+    {
+      "href": "/documents/reports",
+      "name": "Звіти",
+      "links": [
+        {
+          "href": "/docs/reports/report_2021-01.pdf",
+          "name": "Звіт про доходи та витрати ОСББ «Лазурний блюз» у ciчнi 2021 року"
+        },
+        {
+          "href": "/docs/reports/report_2020-12.pdf",
+          "name": "Звіт про доходи та витрати ОСББ «Лазурний блюз» у груднi 2020 року"
+        }
+      ]
+    },
+    {
+      "href": "/documents/security",
+      "name": "Охорона"
+    },
+    {
+      "href": "/documents/problems",
+      "name": "Проблеми будинку"
+    },
+    {
+      "href": "/documents/help",
+      "name": "Меценати будинку"
+    },
+    {
+      "href": "/documents/providers",
+      "name": "Провайдери",
+      "links": [
+        {
+          "href": "https://intraffic.ua/",
+          "name": "INtraffic"
+        },
+        {
+          "href": "https://rusanovka-net.kiev.ua/",
+          "name": "Rusanovka-NET"
+        }
+      ]
+    },
+    {
+      "href": "/documents/vacancy",
+      "name": "Вакансії"
+    },
+    {
+      "href": "/documents/rules",
+      "name": "Правила користування приміщеннями"
+    }
+  ],
+  "footer": {
+    "tabs": ["Клиенту", "Контакти"]
+  }
+}
