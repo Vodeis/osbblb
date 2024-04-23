@@ -5,6 +5,7 @@ import Home from "../pages/Home";
 import Documents from "../pages/Documents";
 import DocumentComponent from "../components/DocumentComponent";
 import Contacts from "../pages/Contacts";
+import Profile from "../pages/Profile";
 
 export const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ export const router = createBrowserRouter([
       //   path: "*",
       //   element: <ErrorPage />,
       // },
+      {
+        path: "profile",
+        element: <Profile />,
+      },
       {
         path: "documents",
         element: <Documents />,

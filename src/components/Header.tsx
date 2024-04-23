@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import cn from "classnames";
 
+import { useAppSelector } from "../hooks";
 import text from "../text/text.json";
 import logo from "../assets/img/logo.png";
 
@@ -9,8 +10,8 @@ import Button from "./Button";
 
 const Header: React.FC = () => {
   const [open, setOpen] = useState<boolean>(false);
-  const isAuthenticated = false;
   const userName = "UserName";
+  const auth = useAppSelector((state) => state.auth.isLogIn);
 
   return (
     <header className="relative">
@@ -48,10 +49,10 @@ const Header: React.FC = () => {
         </div>
         <div className="flex flex-row">
           <Button
-            classes={isAuthenticated ? "btn--primary" : "btn--secondary"}
-            text={isAuthenticated ? userName : text.btnLogIn}
+            classes={auth ? "btn--primary" : "btn--secondary"}
+            text={auth ? userName : text.btnLogIn}
           />
-          {!isAuthenticated && (
+          {!auth && (
             <Button classes={"btn--primary ml-4 hidden lg:block"} text={text.btnRegistration} />
           )}
         </div>
