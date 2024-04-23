@@ -1,32 +1,11 @@
+import React from "react";
 import text from "../text/text.json";
-import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-
-interface Document {
-  name: string;
-  type: string;
-  href: string;
-  links?: { href: string; name: string }[];
-}
 
 const DocumentComponent: React.FC = () => {
   const params: { id?: string } = useParams();
-  const [docData, setDocData] = useState<Document | null>(null);
 
-  useEffect(() => {
-    const getDocument = () => {
-      const document = text.documents.find(
-        (item) => item.href.split("/").slice(-1)[0] === params.id
-      );
-      if (document) {
-        setDocData(document as Document);
-      }
-    };
-
-    if (params.id) {
-      getDocument();
-    }
-  }, [params.id]);
+  const docData = params.id && text.documents.find((item) => item.href.endsWith(`/${params.id}`));
 
   return (
     <article className="w-full h-full">

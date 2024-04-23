@@ -5,27 +5,15 @@ import cn from "classnames";
 import text from "../text/text.json";
 import logo from "../assets/img/logo.png";
 
-interface Tab {
-  id: number;
-  status: boolean;
-}
-
 const Footer: React.FC = () => {
-  const [active, setActive] = useState<Tab[]>([
-    { id: 0, status: false },
-    { id: 1, status: false },
-  ]);
+  const [open, setOpen] = useState<boolean[]>([false, false]);
 
   const switchTabs = (idx: number) => {
-    setActive(
-      active.map((tab) => {
-        if (tab.id === idx) {
-          return { id: idx, status: !tab.status };
-        } else {
-          return tab;
-        }
-      })
-    );
+    setOpen((state) => {
+      const newState = [...state];
+      newState[idx] = !state[idx];
+      return newState;
+    });
   };
 
   return (
@@ -40,25 +28,20 @@ const Footer: React.FC = () => {
         {text.footer.tabs.map((item, idx) => (
           <div className="overflow-hidden" key={idx}>
             <div
-              className={cn(
-                "flex items-center justify-between font-medium py-4 mb-4 border-b-2",
-                "md:hidden"
-              )}
+              className="flex items-center justify-between font-medium py-4 mb-4 border-b-2 md:hidden"
               onClick={() => {
                 switchTabs(idx);
               }}
             >
-              <p className={"text-sm"}>{item}</p>
-              <p
-                className={cn("w-6 text-center", active[idx]?.status ? "rotate-90" : "-rotate-90")}
-              >
+              <p className="text-sm">{item}</p>
+              <p className={cn("w-6 text-center", open[idx] ? "rotate-90" : "-rotate-90")}>
                 &#8249;
               </p>
             </div>
             <ul
               className={cn(
                 "transition-[max-height] duration-300 ease-in-out text-gray-500 font-medium text-sm space-y-2",
-                active[idx]?.status ? "max-h-52" : "max-h-0",
+                open[idx] ? "max-h-52" : "max-h-0",
                 { "text-center": idx },
                 "md:max-h-52"
               )}
