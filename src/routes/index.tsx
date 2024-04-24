@@ -1,4 +1,5 @@
-import { createBrowserRouter } from "react-router-dom";
+import { Navigate, createBrowserRouter } from "react-router-dom";
+
 import AppLayout from "./AppLayout";
 import ErrorPage from "../pages/ErrorPage";
 import Home from "../pages/Home";
@@ -6,6 +7,8 @@ import Documents from "../pages/Documents";
 import DocumentComponent from "../components/DocumentComponent";
 import Contacts from "../pages/Contacts";
 import Profile from "../pages/Profile";
+
+import ProtectedUserRoute from "./protectedUserRoute";
 
 export const router = createBrowserRouter([
   {
@@ -22,8 +25,18 @@ export const router = createBrowserRouter([
       //   element: <ErrorPage />,
       // },
       {
-        path: "profile",
-        element: <Profile />,
+        path: "user",
+        element: <ProtectedUserRoute />,
+        children: [
+          {
+            index: true,
+            element: <Navigate to="profile" replace />,
+          },
+          {
+            path: "profile",
+            element: <Profile />,
+          },
+        ],
       },
       {
         path: "documents",

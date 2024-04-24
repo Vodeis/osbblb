@@ -1,6 +1,10 @@
 {
   "btnLogIn": "Увійти",
   "btnRegistration": "Зареєструватися",
+  "popup": {
+    "label": "Введiть номер телефона:",
+    "error": "Невірний номер телефону"
+  },
 
   "nav": [
     { "href": "/", "name": "Послуги" },
@@ -14,7 +18,32 @@
     { "href": "tel:0800666555", "name": "0 - 800 - 666 - 555" },
     { "href": "mailto:some@gmail.com", "name": "some@gmail.com" }
   ],
-  "contactsv2": {
+  "profileNav": [
+    {
+      "img": "address",
+      "text": "Мої адреса",
+      "href": "user/profile",
+      "type": "link"
+    },
+    {
+      "img": "data",
+      "text": "Мої дані",
+      "href": "user/profile",
+      "type": "link"
+    },
+    {
+      "img": "notifications",
+      "text": "Оповіщення",
+      "href": "user/profile",
+      "type": "link"
+    },
+    {
+      "img": "logout",
+      "text": "Вийти",
+      "type": "button"
+    }
+  ],
+  "contactsPage": {
     "title": "Контакти",
     "workHoursTitle": "Години роботи / приймальні дні",
     "workHours": ["Вівторок з 14:00 до 19:00", "Четвер з 10:00 до 13:00"],

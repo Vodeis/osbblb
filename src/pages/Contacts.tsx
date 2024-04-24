@@ -14,7 +14,7 @@ interface ContactsData {
 }
 
 const Contacts: React.FC = () => {
-  const contacts: ContactsData = text.contactsv2;
+  const contacts: ContactsData = text.contactsPage;
 
   return (
     <main className="wrapper max-w-[530px] my-10">
