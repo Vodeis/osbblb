@@ -48,6 +48,8 @@ footer {
   line-height: 15px;
   border: 1px solid $yellow;
 
+  cursor: pointer;
+
   &--primary {
     color: $white;
     background: $yellow;
@@ -64,6 +66,9 @@ footer {
     text-decoration: underline;
     border: none;
     color: $black;
+  }
+  &:disabled {
+    opacity: 0.5;
   }
 }
 

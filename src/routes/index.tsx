@@ -7,6 +7,7 @@ import Documents from "../pages/Documents";
 import DocumentComponent from "../components/DocumentComponent";
 import Contacts from "../pages/Contacts";
 import Profile from "../pages/Profile";
+import Dashboard from "../pages/Dashboard";
 
 import ProtectedUserRoute from "./protectedUserRoute";
 
@@ -35,6 +36,10 @@ export const router = createBrowserRouter([
           {
             path: "profile",
             element: <Profile />,
+          },
+          {
+            path: "dashboard",
+            element: <Dashboard />,
           },
         ],
       },

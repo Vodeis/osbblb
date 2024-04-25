@@ -1,6 +1,7 @@
 {
   "btnLogIn": "Увійти",
   "btnRegistration": "Зареєструватися",
+  "btnTransferIndicators": "Передати показники",
   "popup": {
     "label": "Введiть номер телефона:",
     "error": "Невірний номер телефону"
@@ -20,15 +21,15 @@
   ],
   "profileNav": [
     {
-      "img": "address",
-      "text": "Мої адреса",
+      "img": "data",
+      "text": "Мої дані",
       "href": "user/profile",
       "type": "link"
     },
     {
-      "img": "data",
-      "text": "Мої дані",
-      "href": "user/profile",
+      "img": "dashboard",
+      "text": "Лічильники",
+      "href": "user/dashboard",
       "type": "link"
     },
     {
@@ -43,6 +44,14 @@
       "type": "button"
     }
   ],
+  "enumeratorsPage": {
+    "title": "Лічильники"
+  },
+  "enumerator": {
+    "title": "Лічильник №",
+    "previousDataTitle": "Попередні показання",
+    "currentDataTitle": "Поточні показання"
+  },
   "contactsPage": {
     "title": "Контакти",
     "workHoursTitle": "Години роботи / приймальні дні",
