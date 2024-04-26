@@ -10,15 +10,11 @@ const Apartments: FC = () => {
   ];
 
   return (
-    <main className="wrapper">
-      <h1>Apartments Page</h1>
-
-      <ul className="grid grid-cols-2 gap-4">
-        {flatsData.map(({ flat, entrance, floor, area }) => (
-          <ApartmentPreview key={flat} flat={flat} entrance={entrance} floor={floor} area={area} />
-        ))}
-      </ul>
-    </main>
+    <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      {flatsData.map(({ flat, entrance, floor, area }) => (
+        <ApartmentPreview key={flat} flat={flat} entrance={entrance} floor={floor} area={area} />
+      ))}
+    </ul>
   );
 };
 

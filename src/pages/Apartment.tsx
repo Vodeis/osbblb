@@ -6,29 +6,25 @@ const Flat: FC = () => {
 
   return (
     <main className="wrapper">
-      <h1 className="text-2xl font-bold text-center">Квартира №{params.id}</h1>
-      <ul className="flex gap-4 mb-4">
-        <li className="">
-          <NavLink
-            to="dashboard"
-            className={({ isActive }) =>
-              isActive ? "pointer-events-none  bg-gray-200 p-4 rounded" : "p-4 rounded"
-            }
-          >
-            Лічильники
-          </NavLink>
-        </li>
-        <li className="">
-          <NavLink
-            to="info"
-            className={({ isActive }) =>
-              isActive ? "pointer-events-none  bg-gray-200 p-4 rounded" : "p-4 rounded"
-            }
-          >
-            Дані
-          </NavLink>
-        </li>
-      </ul>
+      <h1 className="text-2xl font-bold text-center mb-4">Квартира №{params.id}</h1>
+      <nav className="flex gap-4 mb-4">
+        <NavLink
+          to="dashboard"
+          className={({ isActive }) =>
+            isActive ? "pointer-events-none  bg-gray-200 p-4 rounded" : "p-4 rounded"
+          }
+        >
+          Лічильники
+        </NavLink>
+        <NavLink
+          to="info"
+          className={({ isActive }) =>
+            isActive ? "pointer-events-none  bg-gray-200 p-4 rounded" : "p-4 rounded"
+          }
+        >
+          Дані
+        </NavLink>
+      </nav>
       <Outlet />
     </main>
   );

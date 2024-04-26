@@ -4,18 +4,15 @@
 //   flex-shrink: 0;
 // }
 
-html {
+html,
+body,
+#root {
   height: 100%;
 }
 
 body {
   color: $black;
   font-family: "Gotham Pro", sans-serif;
-  height: 100%;
-}
-#root,
-main {
-  height: 100%;
 }
 header {
   box-shadow: 0 1px 3px 0 rgba(44, 44, 44, 0.25);

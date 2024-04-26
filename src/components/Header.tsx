@@ -37,7 +37,7 @@ const Header: React.FC<HeaderProps> = ({ openPopup }) => {
         <Link className="w-12" to="/">
           <img src={logo} alt="logo" />
         </Link>
-        <div
+        <nav
           className={cn(
             "absolute top-0 left-0 w-full transition-transform duration-300 bg-white rounded-b pb-6",
             "md:static md:transform-none md:rounded-none md:pb-0 md:w-auto",
@@ -59,7 +59,7 @@ const Header: React.FC<HeaderProps> = ({ openPopup }) => {
               </li>
             ))}
           </ul>
-        </div>
+        </nav>
         <div className="flex flex-row">
           <Button
             classes={auth ? "btn--primary" : "btn--secondary"}
