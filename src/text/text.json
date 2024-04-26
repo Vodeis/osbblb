@@ -45,12 +45,48 @@
     }
   ],
   "enumeratorsPage": {
-    "title": "Лічильники"
+    "title": "Лічильники",
+    "myMeters": "Мої лічильники",
+    "history": "Історія показань",
+    "tabs": [
+      {
+        "href": "meters",
+        "name": "Мої лічильники"
+      },
+      {
+        "href": "history",
+        "name": "Історія показань"
+      }
+    ]
   },
   "enumerator": {
     "title": "Лічильник №",
     "previousDataTitle": "Попередні показання",
     "currentDataTitle": "Поточні показання"
+  },
+  "apartment": {
+    "tabs": [
+      {
+        "href": "dashboard",
+        "name": "Лічильники"
+      },
+      {
+        "href": "info",
+        "name": "Дані"
+      }
+    ]
+  },
+  "profile": {
+    "tabs": [
+      {
+        "href": "apartments",
+        "name": "Мої квартири"
+      },
+      {
+        "href": "info",
+        "name": "Мої дані"
+      }
+    ]
   },
   "contactsPage": {
     "title": "Контакти",

@@ -10,7 +10,7 @@ interface EnumeratorProps {
   company: string;
   previousData: string;
   currentData: string | null;
-  handleChange?: (id: number, value: string, choosed: boolean) => void;
+  handleChange: (id: number, value: string, choosed: boolean) => void;
   blockSubmitBtn: (val: boolean) => void;
 }
 
@@ -35,16 +35,16 @@ const Enumerator: FC<EnumeratorProps> = ({
 
     if (value.length === 5 && Number(value) >= Number(previousData)) {
       setError(false);
-      handleChange && handleChange(id, value, checked);
+      handleChange(id, value, checked);
     } else if (value.length === 5 && Number(value) < Number(previousData)) {
       setError(true);
     } else {
-      handleChange && handleChange(id, value, false);
+      handleChange(id, value, false);
     }
   };
 
   useEffect(() => {
-    checked ? checkValue(stateValue) : handleChange && handleChange(id, stateValue, false);
+    checked ? checkValue(stateValue) : handleChange(id, stateValue, false);
   }, [checked]);
 
   useEffect(() => {

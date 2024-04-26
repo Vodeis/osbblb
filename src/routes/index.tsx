@@ -11,6 +11,8 @@ import ApartmentInfo from "../components/Apartment/ApartmentInfo";
 import Apartments from "../components/Profile/Apartments";
 import GeneralUserInfo from "../components/Profile/UserInfo";
 
+import EnumeratorsForm from "../components/Apartment/EnumeratorsForm";
+
 import ProtectedUserRoute from "./ProtectedUserRoute";
 import ProtectedFlatRoute from "./ProtectedApartmentRoute";
 
@@ -57,6 +59,16 @@ export const router = createBrowserRouter([
           {
             path: "dashboard",
             element: <Dashboard />,
+            children: [
+              {
+                index: true,
+                element: <Navigate to="meters" replace />,
+              },
+              {
+                path: "meters",
+                element: <EnumeratorsForm />,
+              },
+            ],
           },
           {
             path: "info",
