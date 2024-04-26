@@ -1,7 +1,7 @@
-import { FC, useEffect, useState } from "react";
-import text from "../text/text.json";
-import Enumerator from "../components/Enumerator";
-import Button from "../components/Button";
+import { FC, useState } from "react";
+import text from "../../text/text.json";
+import Enumerator from "./Enumerator";
+import Button from "../Button";
 
 interface Enumerator {
   id: number;
@@ -68,8 +68,8 @@ const Dashboard: FC = () => {
   };
 
   return (
-    <main className="wrapper">
-      <h1 className="text-center font-bold text-3xl my-4">{text.enumeratorsPage.title}</h1>
+    <div>
+      <h1 className="text-center font-bold text-xl my-4">{text.enumeratorsPage.title}</h1>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4 items-end">
         <ul className="w-full flex flex-col gap-4">
           {formData.map(({ id, name, company, previousData }, idx) => (
@@ -88,7 +88,7 @@ const Dashboard: FC = () => {
         </ul>
         <Button disabled={disabled} text={text.btnTransferIndicators} classes="w-auto" />
       </form>
-    </main>
+    </div>
   );
 };
 

@@ -21,21 +21,21 @@
   ],
   "profileNav": [
     {
-      "img": "data",
-      "text": "Мої дані",
-      "href": "user/profile",
+      "img": "apartment",
+      "text": "Мої квартири",
+      "href": "profile/apartments",
       "type": "link"
     },
     {
-      "img": "dashboard",
-      "text": "Лічильники",
-      "href": "user/dashboard",
+      "img": "data",
+      "text": "Мої дані",
+      "href": "profile/info",
       "type": "link"
     },
     {
       "img": "notifications",
       "text": "Оповіщення",
-      "href": "user/profile",
+      "href": "profile/notifications",
       "type": "link"
     },
     {

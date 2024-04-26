@@ -1,7 +1,7 @@
 import { FC, useEffect, useState } from "react";
 import { PatternFormat } from "react-number-format";
 import cn from "classnames";
-import text from "../text/text.json";
+import text from "../../text/text.json";
 
 interface EnumeratorProps {
   id: number;
@@ -48,12 +48,12 @@ const Enumerator: FC<EnumeratorProps> = ({
   }, [checked]);
 
   useEffect(() => {
-    if (!checked) {
-      blockSubmitBtn(false);
-    } else {
-      blockSubmitBtn(!(checked && !(error || stateValue?.length !== 5)));
-    }
+    blockSubmitBtn(checked && (error || stateValue?.length !== 5));
   }, [error, checked, stateValue]);
+
+  useEffect(() => {
+    blockSubmitBtn(true);
+  }, []);
 
   return (
     <li className="flex align-middle justify-between p-4 gap-4 border rounded-lg shadow-sm">

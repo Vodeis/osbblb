@@ -1,19 +1,21 @@
 import { FC } from "react";
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, useParams, Outlet } from "react-router-dom";
 
-const Profile: FC = () => {
+const Flat: FC = () => {
+  const params: { id?: string } = useParams();
+
   return (
     <main className="wrapper">
-      <h1 className="text-2xl font-bold text-center">Профіль</h1>
+      <h1 className="text-2xl font-bold text-center">Квартира №{params.id}</h1>
       <ul className="flex gap-4 mb-4">
         <li className="">
           <NavLink
-            to="apartments"
+            to="dashboard"
             className={({ isActive }) =>
               isActive ? "pointer-events-none  bg-gray-200 p-4 rounded" : "p-4 rounded"
             }
           >
-            Мої квартири
+            Лічильники
           </NavLink>
         </li>
         <li className="">
@@ -23,7 +25,7 @@ const Profile: FC = () => {
               isActive ? "pointer-events-none  bg-gray-200 p-4 rounded" : "p-4 rounded"
             }
           >
-            Мої дані
+            Дані
           </NavLink>
         </li>
       </ul>
@@ -32,4 +34,4 @@ const Profile: FC = () => {
   );
 };
 
-export default Profile;
+export default Flat;

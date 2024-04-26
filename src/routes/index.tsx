@@ -6,10 +6,13 @@ import Home from "../pages/Home";
 import Documents from "../pages/Documents";
 import DocumentComponent from "../components/DocumentComponent";
 import Contacts from "../pages/Contacts";
-import Profile from "../pages/Profile";
-import Dashboard from "../pages/Dashboard";
+import Dashboard from "../components/Apartment/Dashboard";
+import ApartmentInfo from "../components/Apartment/ApartmentInfo";
+import Apartments from "../components/Profile/Apartments";
+import GeneralUserInfo from "../components/Profile/UserInfo";
 
-import ProtectedUserRoute from "./protectedUserRoute";
+import ProtectedUserRoute from "./ProtectedUserRoute";
+import ProtectedFlatRoute from "./ProtectedApartmentRoute";
 
 export const router = createBrowserRouter([
   {
@@ -26,20 +29,38 @@ export const router = createBrowserRouter([
       //   element: <ErrorPage />,
       // },
       {
-        path: "user",
+        path: "profile",
         element: <ProtectedUserRoute />,
         children: [
           {
             index: true,
-            element: <Navigate to="profile" replace />,
+            element: <Navigate to="apartments" replace />,
           },
           {
-            path: "profile",
-            element: <Profile />,
+            path: "apartments",
+            element: <Apartments />,
+          },
+          {
+            path: "info",
+            element: <GeneralUserInfo />,
+          },
+        ],
+      },
+      {
+        path: "apartment/:id",
+        element: <ProtectedFlatRoute />,
+        children: [
+          {
+            index: true,
+            element: <Navigate to="dashboard" replace />,
           },
           {
             path: "dashboard",
             element: <Dashboard />,
+          },
+          {
+            path: "info",
+            element: <ApartmentInfo />,
           },
         ],
       },
