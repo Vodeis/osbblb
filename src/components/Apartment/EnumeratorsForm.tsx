@@ -69,7 +69,15 @@ const EnumeratorsForm: FC = () => {
   };
 
   useEffect(() => {
-    if (formData.filter((item) => item.choosed && item.currentData).length === 0) setDisabled(true);
+    if (formData.filter((item) => item.choosed && item.currentData).length === 0) {
+      setDisabled(true);
+    } else {
+      const dataIsCorrect = formData
+        .filter((item) => item.choosed && item.currentData)
+        .map((item) => Number(item.currentData) >= Number(item.previousData))
+        .every((item) => !!item);
+      setDisabled(!dataIsCorrect);
+    }
   }, [formData]);
 
   return (
@@ -85,7 +93,6 @@ const EnumeratorsForm: FC = () => {
             previousData={previousData}
             currentData={formData.find((item) => item.id === id)?.currentData || null}
             handleChange={handleInputChange}
-            blockSubmitBtn={(val) => setDisabled(val)}
           />
         ))}
       </ul>

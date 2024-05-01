@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from "react";
+import { FC, useState } from "react";
 import { PatternFormat } from "react-number-format";
 import cn from "classnames";
 import text from "../../text/text.json";
@@ -11,7 +11,6 @@ interface EnumeratorProps {
   previousData: string;
   currentData: string | null;
   handleChange: (id: number, value: string, choosed: boolean) => void;
-  blockSubmitBtn: (val: boolean) => void;
 }
 
 const Enumerator: FC<EnumeratorProps> = ({
@@ -22,38 +21,22 @@ const Enumerator: FC<EnumeratorProps> = ({
   previousData,
   currentData,
   handleChange,
-  blockSubmitBtn,
 }) => {
   const { title, previousDataTitle, currentDataTitle } = text.enumerator;
 
-  const [stateValue, setStateValue] = useState<string>("");
   const [error, setError] = useState<boolean>(false);
   const [checked, setChecked] = useState<boolean>(false);
 
-  const checkValue = (value: string | null = currentData) => {
+  const checkValue = (choosed: boolean = checked, value: string | null = currentData) => {
     if (!value) return;
 
-    if (value.length === 5 && Number(value) >= Number(previousData)) {
-      setError(false);
-      handleChange(id, value, checked);
-    } else if (value.length === 5 && Number(value) < Number(previousData)) {
+    if (value.length === 5 && Number(value) < Number(previousData)) {
       setError(true);
     } else {
-      handleChange(id, value, false);
+      setError(false);
     }
+    handleChange(id, value, choosed);
   };
-
-  useEffect(() => {
-    checked ? checkValue(stateValue) : handleChange(id, stateValue, false);
-  }, [checked]);
-
-  useEffect(() => {
-    blockSubmitBtn(checked && (error || stateValue?.length !== 5));
-  }, [error, checked, stateValue]);
-
-  useEffect(() => {
-    blockSubmitBtn(true);
-  }, []);
 
   return (
     <li className="flex p-4 gap-4 border rounded-lg shadow-sm">
@@ -62,7 +45,7 @@ const Enumerator: FC<EnumeratorProps> = ({
           checked={checked}
           onChange={() => {
             setChecked(!checked);
-            checkValue("");
+            checkValue(!checked);
           }}
           type="checkbox"
           className="relative top-2/4 -translate-y-2/4 appearance-none shrink-0 w-6 h-6 border-2 border-gray-400 rounded-full bg-white focus:outline-none checked:bg-yellow-400 checked:border-4 checked:border-gray-100 checked:ring-1 checked:ring-yellow-400 disabled:border-steel-400 disabled:bg-steel-400"
@@ -93,8 +76,7 @@ const Enumerator: FC<EnumeratorProps> = ({
             )}
             value={currentData}
             onValueChange={({ value }) => {
-              checkValue(value);
-              setStateValue(value);
+              checkValue(undefined, value);
             }}
           />
         </div>
