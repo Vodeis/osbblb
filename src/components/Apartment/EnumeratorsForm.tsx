@@ -69,11 +69,11 @@ const EnumeratorsForm: FC = () => {
   };
 
   useEffect(() => {
-    if (formData.filter((item) => item.choosed && item.currentData).length === 0) {
+    const filteredData = formData.filter((item) => item.choosed && item.currentData);
+    if (filteredData.length === 0) {
       setDisabled(true);
     } else {
-      const dataIsCorrect = formData
-        .filter((item) => item.choosed && item.currentData)
+      const dataIsCorrect = filteredData
         .map((item) => Number(item.currentData) >= Number(item.previousData))
         .every((item) => !!item);
       setDisabled(!dataIsCorrect);
